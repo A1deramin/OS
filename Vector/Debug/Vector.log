@@ -1,0 +1,7 @@
+﻿  Vector.cpp
+D:\OS\WinOs1\Vector\Vector.h(36,11): warning C4251: 'Vector::x_': class 'Number' needs to have dll-interface to be used by clients of class 'Vector'
+D:\OS\WinOs1\Vector\Vector.h(8): message : see declaration of 'Number'
+D:\OS\WinOs1\Vector\Vector.h(37,11): warning C4251: 'Vector::y_': class 'Number' needs to have dll-interface to be used by clients of class 'Vector'
+D:\OS\WinOs1\Vector\Vector.h(8): message : see declaration of 'Number'
+     Creating library D:\OS\WinOs1\Debug\Vector.lib and object D:\OS\WinOs1\Debug\Vector.exp
+  Vector.vcxproj -> D:\OS\WinOs1\Debug\Vector.dll
