@@ -1,1 +1,1 @@
-Ja krutoi
+Da.
