@@ -1,0 +1,5 @@
+/home/a1deramin/CLionProjects/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/a1deramin/CLionProjects/lab1/cmake-build-debug/CMakeFiles/number.dir
+/home/a1deramin/CLionProjects/lab1/cmake-build-debug/CMakeFiles/lab1.dir
+/home/a1deramin/CLionProjects/lab1/cmake-build-debug/CMakeFiles/vector.dir
+/home/a1deramin/CLionProjects/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
