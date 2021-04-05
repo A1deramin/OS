@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/romai/CLionProjects/chan/chan.h
+atomic
+-
+condition_variable
+-
+mutex
+-
+utility
+-
+queue
+-
+
+C:/Users/romai/CLionProjects/chan/main.cpp
+iostream
+-
+future
+-
+chan.h
+C:/Users/romai/CLionProjects/chan/chan.h
+
