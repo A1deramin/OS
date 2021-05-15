@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -fPIC -g  -shared -Wl,-soname,libvector.so -o libvector.so CMakeFiles/vector.dir/Vector.cpp.o  libnumber.a 
