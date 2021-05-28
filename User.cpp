@@ -6,29 +6,32 @@
 
 auto main() -> int {
 	const char* name = "PROC_TO_KILL";
-	const char* value = "calculator.exe";
-	char buff[30000];
+	const char* value = "notepad.exe,calculator.exe";
 	SetEnvironmentVariableA(name, value);
-	GetEnvironmentVariableA(name, buff, 30000);
 	STARTUPINFO s{0};
+	
 	PROCESS_INFORMATION p{0};
-	CreateProcess(R"(C:\WINDOWS\system32\calc.exe)", NULL, NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
-	CreateProcess(R"(C:\WINDOWS\system32\notepad.exe)", NULL, NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
 	std::stringstream ss;
-	std::cout << p.dwProcessId;
-	ss << "killer.exe --id " << p.dwProcessId;
+
+	ss << "killer.exe";
+	std::cout << ss.str() << std::endl;
 	CreateProcess(NULL, (LPSTR)ss.str().c_str(), NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
 	WaitForSingleObject(p.hProcess, INFINITE);
 	CloseHandle(p.hProcess);
 
-	CreateProcess(R"(C:\WINDOWS\system32\calc.exe)", NULL, NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
+	CreateProcess(R"(C:\WINDOWS\system32\cmd.exe)", NULL, NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
+	WaitForSingleObject(p.hProcess, INFINITE);
+	ss.str("");
+	ss << "killer.exe --name cmd.exe";
+	std::cout << ss.str() <<std::endl;
+	CreateProcess(NULL, (LPSTR)ss.str().c_str(), NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
+	WaitForSingleObject(p.hProcess, INFINITE);
+	ss.str("");
 	CreateProcess(R"(C:\WINDOWS\system32\notepad.exe)", NULL, NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
-
-	ss.clear();
-	ss << "killer.exe --name calculator.exe";
+	ss << "killer.exe --id " << p.dwProcessId;
+	std::cout << ss.str() << std::endl;
 	CreateProcess(NULL, (LPSTR)ss.str().c_str(), NULL, NULL, FALSE, NULL, NULL, NULL, &s, &p);
 	WaitForSingleObject(p.hProcess, INFINITE);
 	CloseHandle(p.hProcess);
 	SetEnvironmentVariableA(name, NULL);
-
 }
